@@ -4,18 +4,24 @@ import {HttpClientModule} from '@angular/common/http';
 import { AgGridModule } from 'ag-grid-angular';
 import { AppComponent } from './app.component';
 import { TasksComponent } from './tasks/tasks.component';
-import { CheckboxComponent } from './checkbox/checkbox.component';
+import { CIconRendererComponent } from './icon-renderer/icon-renderer.component';
+import { CNumericCellEditorComponent } from './numeric-cell-editor/numeric-cell-editor.component';
+import { FormsModule } from '@angular/forms';
+import { CTaskTypeFilterComponent } from './task-type-filter/task-type-filter.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TasksComponent,
-    CheckboxComponent
+    CIconRendererComponent,
+    CNumericCellEditorComponent,
+    CTaskTypeFilterComponent
   ],
   imports: [
     BrowserModule,
     AgGridModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

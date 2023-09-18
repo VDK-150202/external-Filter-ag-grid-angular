@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CheckboxComponent } from './checkbox.component';
+import { CIconRendererComponent } from './icon-renderer.component';
 
-describe('CheckboxComponent', () => {
-  let component: CheckboxComponent;
-  let fixture: ComponentFixture<CheckboxComponent>;
+describe('IconRendererComponent', () => {
+  let component: CIconRendererComponent;
+  let fixture: ComponentFixture<CIconRendererComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ CheckboxComponent ]
+      declarations: [ CIconRendererComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(CheckboxComponent);
+    fixture = TestBed.createComponent(CIconRendererComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

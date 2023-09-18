@@ -3,7 +3,7 @@ export class CTask {
     Name: string ;
     Manager: string ;
     Type: string ;
-    Duration: string;
+    Duration: number;
     Status: string ;
     Department: string;
 
@@ -11,7 +11,7 @@ export class CTask {
         taskName: string,
         taskManager: string,
         taskType: string,
-        duration: string,
+        duration: number,
         taskStatus: string,
         department: string) {
         this.Id = taskId;
