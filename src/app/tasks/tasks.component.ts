@@ -90,33 +90,29 @@ export class TasksComponent {
 
   ExportToCSV() {
     try {
-      const durationColumnName= "Duration";
-      const lstTaskExclude = ['Id'];
-      const lstColumnToExport = this.GridOptions.columnDefs?.filter((col: any) => (-1 == lstTaskExclude.indexOf(col.field)))
-        .map((col: any) => col.field)
+      const lstColumnToExclude = ['Id'];
+      const lstColumnToExport = this.GridOptions.columnDefs?.filter((col: any) => (-1 == lstColumnToExclude.indexOf(col.field)))
+        .map((col: any) => col.field);
   
-      const csvExportconfig = {
+      const csvExportConfig = {
         fileName: 'TaskData.csv',
         columnKeys: lstColumnToExport,
-        processCellCallback(params: any): any {
+        processCellCallback(params: any): string {
           const expectedColumnValue= params.column.colId;
           let result = '';
           switch(expectedColumnValue){
           case 'Duration' : 
               result =  params.value + ' days';
               break;
-          case 'Type' : 
-              result = "TT : "+params.value;
-              break;
           default : 
               result = params.value
-              break
+              break;
           }
             return result;
-          }
+        }
       };
   
-      this.GridApi.exportDataAsCsv(csvExportconfig);
+      this.GridApi.exportDataAsCsv(csvExportConfig);
     } catch (error) {
       console.log("error occur in ExportToCSV()", error);
     }
